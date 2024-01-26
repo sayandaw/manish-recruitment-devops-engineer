@@ -1,0 +1,21 @@
+# Create a Deployment called: tomcat-app-deployment in ns: tomcat-app-ns
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat-app-deployment
+  namespace: tomcat-app-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tomcat-app
+  template:
+    metadata:
+      labels:
+        app: tomcat-app
+    spec:
+      containers:
+      - name: tomcat-app-container
+        image: tomcat-app:v1
+        ports:
+        - containerPort: 8080

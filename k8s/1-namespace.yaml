@@ -1,0 +1,7 @@
+# Create a namespace called: tomcat-app-ns
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: tomcat-app-ns
+spec: {}
+status: {}
